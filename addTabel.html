@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"> 
+    <title>Dodawanie danych do bazy</title>
+</head>
+<body>
+<button id="addDataButton">Dodaj dane do bazy</button>
+<script>
+document.getElementById("addDataButton").addEventListener("click", function() {
+    var apartments = [
+    { building: "B", numebrBuilding: 1,  firstNameAndLastName: "Tom Prot", surface: 43.56, floors: 0, status: "Wolny"},
+    { building: "B", numebrBuilding: 2,  firstNameAndLastName: "Jack White", surface: 15.85, floors: 0, status: "Zajety"},
+    { building: "C", numebrBuilding: 3,  firstNameAndLastName: "", surface: 65.49, floors: 0, status: "Wolny"},
+    { building: "C", numebrBuilding: 4,  firstNameAndLastName: "", surface: 81.91, floors: 0, status: "Wolny"},
+    ];
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "addApartments.php", true);
+    xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+    xhr.send(JSON.stringify(apartments));
+});
+</script>
+</body>
+</html>
