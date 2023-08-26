@@ -6,5 +6,4 @@ $config = array(
     'password' => 'JaMalegJacekaDAWTKAIerererererereeEwdawdawd34oKotkAlekaAdew4tgmaIpieska232!',
     'dbname' => 'server171344_apartmentfilters'
 );
-
 ?>
