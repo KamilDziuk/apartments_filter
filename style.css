@@ -1,0 +1,161 @@
+
+body {
+    font-family: 'Open Sans', sans-serif;
+   font-size: 16px;
+   line-height: 1.5;
+   background-color: #f9f9f9;
+   }
+   form {
+   max-width:90%;
+   margin: 0 auto;
+   padding: 20px;
+   border: 1px solid #ccc;
+   border-radius: 5px;
+   background-color: #fff;
+   }
+   #bContainer {
+    float: left;
+    width: 50%;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  #cContainer {
+    float: left;
+    padding: 23px;
+    box-sizing: border-box;
+  }
+   label {
+   display: block;
+   margin-bottom: 10px;
+   }
+   input[type="text"],
+   input[type="number"],
+   input[type="range"] {
+   display: inline-block;
+   width: 100px;
+   padding: 5px;
+   border: 1px solid #ccc;
+   border-radius: 3px;
+   margin-right: 10px;
+   }
+  #bapartmentsFree
+  {
+    color: green;  
+    font-weight: 700;
+  }
+  #bapartmentsBooked
+  {
+    color: red;
+    font-weight: 700;
+  }
+  #capartmentsFree
+  {
+    color: green;
+    font-weight: 700;
+  }
+  #capartmentsBooked
+  {
+  font-weight: 700;
+  color: red;
+  }
+   .checkbox-filter {
+   display: flex;
+   flex-direction: column;
+   } 
+   button[type="button"] {
+   display: block;
+   margin-top: 20px;
+   padding: 10px;
+   border: none;
+   border-radius: 3px;
+   background-color: #EFEFED;
+   color: #000;
+   cursor: pointer;
+   font-size: 16px;
+   } 
+   button[type="button"]:hover {
+     background-color: #EFEFED;
+   }
+   #result {
+   margin-top: 20px;
+   padding: 20px;
+   border: 1px solid #ccc;
+   border-radius: 5px;
+   background-color: #fff;
+   }
+   #result > div {
+   margin-bottom: 10px;
+   padding-bottom: 10px;
+   border-bottom: 1px solid #ccc;
+   } 
+   #result > div:last-child {
+   margin-bottom: 0;
+   padding-bottom: 0;
+   border-bottom: none;
+   }
+   #result a {
+     color: #000;
+   text-decoration: none;
+   }
+   #result a:hover {
+   text-decoration: underline;
+   }
+   input[type="checkbox"] {
+   margin-right: 5px;
+   }
+   form input[type=text]
+   {
+     width: 160px;
+   }
+   label[for="sort-most-price-checkbox"],
+   label[for="sort-least-price-checkbox"] {
+     color: #000;
+   font-weight: bold;
+   }
+   label[for="sort-most-surface-checkbox"],
+   label[for="sort-least-surface-checkbox"] {
+   color: #000;
+   font-weight: bold;
+   }
+   label[for="sort-most-price-checkbox"]:before,
+   label[for="sort-least-price-checkbox"]:before,
+   label[for="sort-most-surface-checkbox"]:before,
+   label[for="sort-least-surface-checkbox"]:before {
+   content: "\2610";
+   margin-right: 5px;
+   }
+   input[type="checkbox"]:checked + label:before {
+   content: "\2611";
+   }
+   input[type=range] {
+     -webkit-appearance: none;
+     width: 150px;
+     height: 10px;
+     margin: 10px 0;
+     background-color: #ddd;
+     border-radius: 10px;
+   }
+   input[type=range]:focus {
+   
+   }
+   input[type=range]::-webkit-slider-thumb {
+     -webkit-appearance: none;
+     width: 30px;
+     height: 30px;
+     background-color: #000000;
+     border-radius: 50%;
+     cursor: pointer;
+   }
+   input[type=range]::-moz-range-thumb {
+     width: 30px;
+     height: 30px;
+     background-color: #000000;
+     border-radius: 50%;
+     cursor: pointer;
+     }
+     .form-container {
+      display: flex;
+      justify-content: space-between;
+      width: 500px;
+    }
+  
