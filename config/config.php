@@ -1,9 +1,9 @@
 <?php
-
 $config = array(
-    'servername' => 'mariadb1011.server171344.nazwa.pl',
-    'username' => 'server171344_apartmentfilters',
-    'password' => 'JaMalegJacekaDAWTKAIerererererereeEwdawdawd34oKotkAlekaAdew4tgmaIpieska232!',
-    'dbname' => 'server171344_apartmentfilters'
+    'servername' => 'mariadb1011.server15371344.nazwa.pl',
+    'username' => 'server15371344_apartmentfilters',
+    'password' => '4!',
+    'dbname' => 'server142471344_apartmentfilters'
 );
+
 ?>
