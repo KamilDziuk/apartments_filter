@@ -1,21 +1,21 @@
 function selectApartments() {
-    var buildingForm = document.getElementById("form").buildingForm.value;
-    var buildingTo = document.getElementById("form").buildingTo.value;
-   var powOd = Number(document.getElementById("form").powOd.value);
-   var powDo = Number(document.getElementById("form").powDo.value);
-   var floorsOd = Number(document.getElementById("form").floorsOd.value);
-   var floorsDo = Number(document.getElementById("form").floorsDo.value);
-   var sortMostSurfaceCheckbox = document.getElementById("sort-most-surface-checkbox");
-   var sortLeastSurfaceCheckbox = document.getElementById("sort-least-surface-checkbox");
-   var sortfreeCheckbox = document.getElementById("sort-free-checkbox");
-   var sortsoccupiedeCheckbox = document.getElementById("sort-soccupied-checkbox");
-   var result = document.getElementById("result");
+    let buildingForm = document.getElementById("form").buildingForm.value;
+    let buildingTo = document.getElementById("form").buildingTo.value;
+   let powOd = Number(document.getElementById("form").powOd.value);
+   let powDo = Number(document.getElementById("form").powDo.value);
+   let floorsOd = Number(document.getElementById("form").floorsOd.value);
+   let floorsDo = Number(document.getElementById("form").floorsDo.value);
+   let sortMostSurfaceCheckbox = document.getElementById("sort-most-surface-checkbox");
+   let sortLeastSurfaceCheckbox = document.getElementById("sort-least-surface-checkbox");
+   let sortfreeCheckbox = document.getElementById("sort-free-checkbox");
+   let sortsoccupiedeCheckbox = document.getElementById("sort-soccupied-checkbox");
+   let result = document.getElementById("result");
    result.innerHTML = "";
-   var found = false;
-   var sortBySurfaceAsc = function(a, b) {
+   let found = false;
+   let sortBySurfaceAsc = function(a, b) {
    return a.surface - b.surface;
    };
-   var sortBySurfaceDesc = function(a, b) {
+   let sortBySurfaceDesc = function(a, b) {
    return b.surface - a.surface;
    };
    if (sortMostSurfaceCheckbox.checked) {
@@ -36,7 +36,7 @@ function selectApartments() {
         (floorsOd === "" || apartment.floors >= floorsOd)&&
         (!sortfreeCheckbox.checked || apartment.status === "Wolny") &&
         (!sortsoccupiedeCheckbox.checked || apartment.status === "Zajety")) {
-      var apartmentElement = document.createElement("div");
+      let apartmentElement = document.createElement("div");
       apartmentElement.innerHTML = "  Budynek: " + 
       apartment.building + " | Numer mieszkania: " +
       apartment.numebrBuilding + " | Imie i Nazwisko: " + 
@@ -47,13 +47,13 @@ function selectApartments() {
         }
   });
   if (!found) {
-    var noResultsElement = document.createElement("div");
+    let noResultsElement = document.createElement("div");
     noResultsElement.innerHTML = "Nie znaleziono żadnych apartamentów spełniających podane kryteria.";
     result.appendChild(noResultsElement);
   }
   };
   function updateFloors() {
-  var floors = Number(document.getElementById("form").floors.value);
+  let floors = Number(document.getElementById("form").floors.value);
   document.getElementById("form").floorsDo.min = floors;
   
   if (Number(document.getElementById("form").floorsDo.value) < floors) {
@@ -61,79 +61,79 @@ function selectApartments() {
   }
   };
   function updatePow() {
-  var pow = Number(document.getElementById("form").pow.value);
+  let pow = Number(document.getElementById("form").pow.value);
   document.getElementById("form").powDo.min = pow;
   if (Number(document.getElementById("form").powDo.value) < pow) {
     document.getElementById("form").powDo.value = pow;
   }
   };
   function updatePow() {
-  var pow = Number(document.getElementById("form").pow.value);
+  let pow = Number(document.getElementById("form").pow.value);
   document.getElementById("form").powDo.min = pow;
   if (Number(document.getElementById("form").powDo.value) < pow) {
     document.getElementById("form").powDo.value = pow;
   }  
   };
    function numberOfVacantApartments(array, status, building) {
-    var numbersApartments = array.filter(function(apartment) {
+    let numbersApartments = array.filter(function(apartment) {
       return apartment.status === status && apartment.building === building;
     });
     return numbersApartments.length;
   };
-   var bAapartmentsFree = numberOfVacantApartments(apartments, "Wolny", "B");
-   var bApartmentsBooked = numberOfVacantApartments(apartments, "Zajety", "B");
-   var cAapartmentsFree = numberOfVacantApartments(apartments, "Wolny", "C");
-   var cApartmentsBooked = numberOfVacantApartments(apartments, "Zajety", "C");
-   var bapartmentsFree = document.getElementById('bapartmentsFree');
-   var bapartmentsBooked = document.getElementById('bapartmentsBooked');
-   var capartmentsFree = document.getElementById('capartmentsFree');
-   var capartmentsBooked = document.getElementById('capartmentsBooked');
+   let bAapartmentsFree = numberOfVacantApartments(apartments, "Wolny", "B");
+   let bApartmentsBooked = numberOfVacantApartments(apartments, "Zajety", "B");
+   let cAapartmentsFree = numberOfVacantApartments(apartments, "Wolny", "C");
+   let cApartmentsBooked = numberOfVacantApartments(apartments, "Zajety", "C");
+   let bapartmentsFree = document.getElementById('bapartmentsFree');
+   let bapartmentsBooked = document.getElementById('bapartmentsBooked');
+   let capartmentsFree = document.getElementById('capartmentsFree');
+   let capartmentsBooked = document.getElementById('capartmentsBooked');
    bapartmentsBooked.innerHTML =  bApartmentsBooked;
    bapartmentsFree.innerHTML =  bAapartmentsFree;
    capartmentsFree.innerHTML =  cAapartmentsFree;
    capartmentsBooked.innerHTML =  cApartmentsBooked;
-   var freeBContainer = document.getElementById('free-bContainer');
-   var bookedBContainer = document.getElementById('booked-bContainer');
-   var freeCContainer = document.getElementById('free-cContainer');
-   var bookedCContainer = document.getElementById('booked-cContainer');
-   var freeBContainerResult = document.getElementById('free-bContainer-result');
-   var bookedBContainerResult = document.getElementById('booked-bContainer-result');
-   var freeCContainerResult = document.getElementById('free-cContainer-result');
-   var bookedCContainerResult = document.getElementById('booked-cContainer-result');
-   var availableApartmentsb = apartments.filter(function(apartment) {
+   let freeBContainer = document.getElementById('free-bContainer');
+   let bookedBContainer = document.getElementById('booked-bContainer');
+   let freeCContainer = document.getElementById('free-cContainer');
+   let bookedCContainer = document.getElementById('booked-cContainer');
+   let freeBContainerResult = document.getElementById('free-bContainer-result');
+   let bookedBContainerResult = document.getElementById('booked-bContainer-result');
+   let freeCContainerResult = document.getElementById('free-cContainer-result');
+   let bookedCContainerResult = document.getElementById('booked-cContainer-result');
+   let availableApartmentsb = apartments.filter(function(apartment) {
     return apartment.status === "Wolny" && apartment.building === "B";
   });
-  var occupiedApartmentsb = apartments.filter(function(apartment) {
+  let occupiedApartmentsb = apartments.filter(function(apartment) {
     return apartment.status === "Zajety" && apartment.building === "B";
   });
-  var resultFromTheListOfavailableApartmentsb = "";
-  for (var i = 0; i < availableApartmentsb.length; i++) {
-    var apartment = availableApartmentsb[i];
+  let resultFromTheListOfavailableApartmentsb = "";
+  for (let i = 0; i < availableApartmentsb.length; i++) {
+    let apartment = availableApartmentsb[i];
     resultFromTheListOfavailableApartmentsb += "Numer mieszkania: " + apartment.numebrBuilding + " |  Piętro: " + apartment.floors +" | Powieszchnia " +  apartment.surface +"m<sup>2</sup>"  + "; " + "<br>" + "<br>";
   };
-  var resultFromTheListOfoccupiedApartmentsb = "";
-  for (var i = 0; i < occupiedApartmentsb.length; i++) {
-    var apartment = occupiedApartmentsb[i];
+  let resultFromTheListOfoccupiedApartmentsb = "";
+  for (let i = 0; i < occupiedApartmentsb.length; i++) {
+    let apartment = occupiedApartmentsb[i];
     resultFromTheListOfoccupiedApartmentsb += "Numer mieszkania: " + apartment.numebrBuilding + " |  Piętro: " + apartment.floors + " | Imie i Nazwisko: " + apartment.firstNameAndLastName +" | Powieszchnia " +  apartment.surface +"m<sup>2</sup>"  + "; " + "<br>" + "<br>";
   };
-  var availableApartmentsc = apartments.filter(function(apartment) {
+  let availableApartmentsc = apartments.filter(function(apartment) {
     return apartment.status === "Wolny" && apartment.building === "C";
     
   });
-  var occupiedApartmentsc = apartments.filter(function(apartment) {
+  let occupiedApartmentsc = apartments.filter(function(apartment) {
     return apartment.status === "Zajety" && apartment.building === "C";
   });
-  var resultFromTheListOfavailableApartmentsc = "";
-  for (var i = 0; i < availableApartmentsc.length; i++) {
-    var apartment = availableApartmentsc[i];
+  let resultFromTheListOfavailableApartmentsc = "";
+  for (let i = 0; i < availableApartmentsc.length; i++) {
+    let apartment = availableApartmentsc[i];
     resultFromTheListOfavailableApartmentsc += "Numer mieszkania: " + apartment.numebrBuilding + " |  Piętro: " + apartment.floors +" | Powieszchnia " +  apartment.surface +"m<sup>2</sup>"  + "; " + "<br>" + "<br>";
   };
-  var resultFromTheListOfoccupiedApartmentsc = "";
-  for (var i = 0; i < occupiedApartmentsc.length; i++) {
-    var apartment = occupiedApartmentsc[i];
+  let resultFromTheListOfoccupiedApartmentsc = "";
+  for (let i = 0; i < occupiedApartmentsc.length; i++) {
+    let apartment = occupiedApartmentsc[i];
     resultFromTheListOfoccupiedApartmentsc += "Numer mieszkania: " + apartment.numebrBuilding + " |  Piętro: " + apartment.floors + " | Imie i Nazwisko: " + apartment.firstNameAndLastName  +" | Powieszchnia " +  apartment.surface +"m<sup>2</sup>"  + "; " + "<br>" + "<br>";
   };
-   var isClicked = false;
+   let isClicked = false;
    freeBContainer.addEventListener('click', (event) => {
      event.preventDefault();
      if (!isClicked) {
@@ -181,9 +181,9 @@ function selectApartments() {
     }
   });
     function transformToUppercase() {
-      var inputElementBuilbingInput = document.getElementById('buildingInput');
-      var inputElementBuildingForm = document.getElementById('buildingForm');
-      var inputElement = document.getElementById('buildingTo');
+      let inputElementBuilbingInput = document.getElementById('buildingInput');
+      let inputElementBuildingForm = document.getElementById('buildingForm');
+      let inputElement = document.getElementById('buildingTo');
       inputElementBuilbingInput.value = inputElementBuilbingInput.value.toUpperCase();
       inputElementBuildingForm.value = inputElementBuildingForm.value.toUpperCase();
       inputElement.value = inputElement.value.toUpperCase();
